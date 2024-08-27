@@ -19,4 +19,12 @@ public class AlunoService {
     public List<Aluno> buscarAlunosPorCpfResponsavel(String cpfResponsavel) {
         return alunoRepository.findByCpfResponsavel(cpfResponsavel);
     }
+
+    public List<Aluno> buscarTodosOsAlunos() {
+        return alunoRepository.findAll();
+    }
+
+  public Aluno salvar(Aluno aluno) {
+      return alunoRepository.save(aluno);
+  }
 }

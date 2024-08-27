@@ -1,0 +1,25 @@
+<h2>{{ aluno.id ? 'Editar Aluno' : 'Adicionar Aluno' }}</h2>
+<form (ngSubmit)="salvarAluno()">
+  <label for="nome">Nome</label>
+  <input id="nome" [(ngModel)]="aluno.nome" name="nome" required />
+
+  <label for="idade">Idade</label>
+  <input id="idade" [(ngModel)]="aluno.idade" name="idade" type="number" required />
+
+  <label for="escola">Escola</label>
+  <select id="escola" [(ngModel)]="aluno.escolaId" name="escola">
+    <option *ngFor="let escola of escolas" [value]="escola.id">{{ escola.nome }}</option>
+  </select>
+
+  <label for="turno">Turno</label>
+  <select id="turno" [(ngModel)]="aluno.turnoId" name="turno">
+    <option *ngFor="let turno of turnos" [value]="turno.id">{{ turno.nome }}</option>
+  </select>
+
+  <label for="serie">Série</label>
+  <select id="serie" [(ngModel)]="aluno.serieId" name="serie">
+    <option *ngFor="let serie of series" [value]="serie.id">{{ serie.nome }}</option>
+  </select>
+
+  <button type="submit">Salvar</button>
+</form>
